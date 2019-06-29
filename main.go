@@ -1,7 +1,6 @@
 package main
 
 import (
-	"bufio"
 	"fmt"
 	"log"
 	"os"
@@ -24,20 +23,7 @@ func main() {
 
 	file.WriteString(content)
 
-	scanner := bufio.NewScanner(file)
-	scanner.Split(bufio.ScanLines)
-
-	var lines []string
-
-	for scanner.Scan() {
-		lines = append(lines, scanner.Text())
-	}
-
-	for _, line := range lines {
-		fmt.Println(line)
-	}
-
-	// fmt.Printf("Removing %v...\n", name)
-	// os.Remove(name)
+	fmt.Printf("Removing %v...\n", name)
+	os.Remove(name)
 
 }
